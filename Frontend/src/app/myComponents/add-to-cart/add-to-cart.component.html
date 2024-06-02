@@ -1,0 +1,53 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of products">
+      <div class="card mb-4 shadow-sm">
+        <img [src]="product.thumbnail" class="card-img-top" alt="{{ product.title }}">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title mb-0">{{ product.title }}</h5>
+            <button class="btn p-0" (click)="addToFav(product._id)">
+              <i class="fa fa-heart"></i>
+            </button>
+          </div>
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-primary" (click)="addToCart(product._id)">
+              Add to Cart
+            </button>
+            <button class="btn btn-secondary" [routerLink]="['/product', product._id]">
+              Show Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+
+
+ <div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of products">
+      <div class="card mb-4 shadow-sm">
+        <img [src]="product.thumbnail" class="card-img-top" alt="{{ product.title }}">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title mb-0">{{ product.title }}</h5>
+            <button class="btn p-0" (click)="toggleFav(product)">
+              <i class="fa fa-heart" [ngClass]="{'favorited': product.isFav}"></i>
+            </button>
+          </div>
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-primary" (click)="addToCart(product._id)">
+              Add to Cart
+            </button>
+            <button class="btn btn-secondary" [routerLink]="['/product', product._id]">
+              Show Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

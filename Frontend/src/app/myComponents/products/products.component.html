@@ -1,0 +1,37 @@
+<div class="container">
+    <h2 class="text-center mb-4">Product Details</h2>
+    <div class="row mb-3">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Filter by Category" [(ngModel)]="filterCategory" (input)="applyFilters()">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Filter by Brand" [(ngModel)]="filterBrand" (input)="applyFilters()">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Filter by Title" [(ngModel)]="filterTitle" (input)="applyFilters()">
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Brand</th>
+          <th>Price</th>
+          <th>Ratings</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of filteredProducts">
+          <td>{{ product.title }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.brand }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.rating | number:'1.2-2' }}</td>
+          <td><button class="btn btn-sm btn-danger" (click)="deleteProduct(product._id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

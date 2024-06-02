@@ -1,0 +1,31 @@
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+  margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
+.navbar-nav .fa-shopping-cart {
+  font-size: 1.5rem;
+}
+
+.navbar-nav.ml-auto {
+  margin-left: auto;
+}
+
+.fa-heart {
+  font-size: 1.5rem;
+  color: red;
+}

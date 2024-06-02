@@ -1,0 +1,52 @@
+<div class="container mt-5">
+  <h2 class="text-center">Add Product</h2>
+  <div class="form-wrapper">
+    <form [formGroup]="productForm" (ngSubmit)="submit()" class="centered-form">
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input id="id" type="number" formControlName="id" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input id="title" type="text" formControlName="title" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input id="price" type="number" formControlName="price" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="discountPercentage">Discount Percentage</label>
+        <input id="discountPercentage" type="number" formControlName="discountPercentage" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <input id="rating" type="number" formControlName="rating" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="stock">Stock</label>
+        <input id="stock" type="number" formControlName="stock" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="brand">Brand</label>
+        <input id="brand" type="text" formControlName="brand" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input id="category" type="text" formControlName="category" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="thumbnail">Thumbnail</label>
+        <input id="thumbnail" type="file" (change)="onFileChange($event, 'thumbnail')" class="form-control-file">
+      </div>
+      <div class="form-group">
+        <label for="images">Images</label>
+        <input id="images" type="file" (change)="onFilesChange($event, 'images')" class="form-control-file" multiple>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Add Product</button>
+    </form>
+  </div>
+</div>

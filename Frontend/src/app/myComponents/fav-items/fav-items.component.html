@@ -1,0 +1,33 @@
+<div *ngIf="isLoggedIn; else notLoggedIn">
+    <div *ngIf="favItems.length > 0; else emptyCart">
+        <h3 class="text-center mt-3 mb-3">Favourite Products</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Thumbnail</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of favItems">
+            <td><img [src]="item.thumbnail" alt="{{item.title}}" width="50"></td>
+            <td>{{item.title}}</td>
+            <td>{{item.price }}</td>
+            <td>{{item.rating}}</td>
+            <td><button class="btn btn-outline-success" (click)="removeFromFav(item._id)">Unmark</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <ng-template #notLoggedIn>
+    <h3 class="text-center pt-4">Please log in to view your favourite products.</h3>
+  </ng-template>
+  
+  <ng-template #emptyCart>
+    <h3 class="text-center pt-4">You don't have any product marked as favourite</h3>
+  </ng-template>

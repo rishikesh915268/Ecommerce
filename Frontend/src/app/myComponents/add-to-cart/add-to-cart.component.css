@@ -1,0 +1,52 @@
+.container {
+  margin-top: 20px;
+}
+
+.card {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.btn {
+  padding: 0.375rem 0.75rem;
+}
+
+/* .btn .fa-heart {
+  font-size: 1.5rem;
+  color: rgb(218, 184, 184);
+} */
+
+.d-flex.justify-content-between {
+  gap: 10px;
+}
+
+
+.fa-heart {
+  font-size: 24px;
+  color: grey;
+  cursor: pointer;
+}
+
+.fa-heart.favorited {
+  color: red;
+}
